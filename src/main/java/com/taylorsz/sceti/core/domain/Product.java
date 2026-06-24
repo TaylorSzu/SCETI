@@ -1,16 +1,11 @@
 package com.taylorsz.sceti.core.domain;
 
-<<<<<<< HEAD
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-=======
 import com.taylorsz.sceti.core.enums.ProductStatus;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
->>>>>>> feat/product-service
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -41,10 +36,6 @@ public class Product {
   @Column(nullable = false)
   private int stockQuantity;
   @Column(nullable = false)
-<<<<<<< HEAD
-  private String status;
-=======
   @Enumerated(EnumType.STRING)
   private ProductStatus status;
->>>>>>> feat/product-service
 }

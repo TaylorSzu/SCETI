@@ -1,13 +1,6 @@
 package com.taylorsz.sceti.core.service;
 
 import java.util.List;
-<<<<<<< HEAD
-import org.springframework.stereotype.Service;
-import com.taylorsz.sceti.core.domain.Category;
-import com.taylorsz.sceti.persistence.repository.CategoryRepository;
-import lombok.RequiredArgsConstructor;
-import java.lang.RuntimeException;
-=======
 
 import org.springframework.stereotype.Service;
 
@@ -15,7 +8,6 @@ import com.taylorsz.sceti.core.domain.Category;
 import com.taylorsz.sceti.persistence.repository.CategoryRepository;
 
 import lombok.RequiredArgsConstructor;
->>>>>>> feat/product-service
 
 @Service
 @RequiredArgsConstructor
