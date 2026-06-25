@@ -1,5 +1,7 @@
 package com.taylorsz.sceti.core.domain;
 
+import com.taylorsz.sceti.core.enums.Status;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -34,5 +36,5 @@ public class Supplier {
   @Column(nullable = false)
   private String responsible;
   @Column(nullable = false)
-  private String status;
+  private Status status;
 }

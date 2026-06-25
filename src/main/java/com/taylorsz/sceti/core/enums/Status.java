@@ -1,6 +1,6 @@
 package com.taylorsz.sceti.core.enums;
 
-public enum ProductStatus {
+public enum Status {
     ACTIVE,
     INACTIVE
 }

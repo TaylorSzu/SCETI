@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.taylorsz.sceti.core.domain.Product;
-import com.taylorsz.sceti.core.enums.ProductStatus;
+import com.taylorsz.sceti.core.enums.Status;
 import com.taylorsz.sceti.core.exception.NotFoundException;
 import com.taylorsz.sceti.persistence.repository.ProductRepository;
 
@@ -20,7 +20,7 @@ public class ProductService {
         if (product.getStockQuantity() < 0) {
             throw new IllegalArgumentException("Stock quantity cannot be negative");
         }
-        product.setStatus(ProductStatus.ACTIVE);
+        product.setStatus(Status.ACTIVE);
         return productRepository.save(product);
     }
 
@@ -34,9 +34,9 @@ public class ProductService {
         return productRepository.save(product);
     }
 
-    public List<Product> listAll(ProductStatus status) {
+    public List<Product> listAll(Status status) {
         if (status == null) {
-            return productRepository.findByStatus(ProductStatus.ACTIVE);
+            return productRepository.findByStatus(Status.ACTIVE);
         } else {
             return productRepository.findByStatus(status);
         }
@@ -45,7 +45,7 @@ public class ProductService {
     public void delete(long id) {
         Product existingProduct = productRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Product not found with id: " + id));
-        existingProduct.setStatus(ProductStatus.INACTIVE);
+        existingProduct.setStatus(Status.INACTIVE);
         productRepository.save(existingProduct);
     }
 }
