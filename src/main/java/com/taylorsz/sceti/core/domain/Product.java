@@ -1,6 +1,6 @@
 package com.taylorsz.sceti.core.domain;
 
-import com.taylorsz.sceti.core.enums.ProductStatus;
+import com.taylorsz.sceti.core.enums.Status;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -37,5 +37,5 @@ public class Product {
   private int stockQuantity;
   @Column(nullable = false)
   @Enumerated(EnumType.STRING)
-  private ProductStatus status;
+  private Status status;
 }
