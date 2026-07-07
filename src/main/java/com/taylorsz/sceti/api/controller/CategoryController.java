@@ -15,19 +15,28 @@ import org.springframework.web.bind.annotation.RestController;
 import com.taylorsz.sceti.core.domain.Category;
 import com.taylorsz.sceti.core.service.CategoryService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/category")
 @RequiredArgsConstructor
+@Tag(name = "categorias", description = "descrição da categoria")
 public class CategoryController {
 
   private final CategoryService categoryService;
 
+  @Operation(summary = "criar categoria", description = "bla bla bla detalhado")
+  @ApiResponses({
+      @ApiResponse(responseCode = "201", description = "categoria cria com sucesso")
+  })
   @PostMapping("/add")
   public ResponseEntity<Category> add(@RequestBody Category category) {
     Category response = categoryService.save(category);
-    return ResponseEntity.status(HttpStatus.CREATED).body(category);
+    return ResponseEntity.status(HttpStatus.CREATED).body(response);
   }
 
   @GetMapping("/list/all")
